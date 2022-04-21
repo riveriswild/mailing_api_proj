@@ -8,6 +8,7 @@ router = routers.DefaultRouter()
 router.register(r'clients', ClientViewSet)
 router.register(r'messages', MessageViewSet)
 router.register(r'mailings', MailingViewSet)
+router.register(r'statistics', MailingStatsView)
 
 urlpatterns = [
     path('api/', include(router.urls)),

@@ -49,11 +49,11 @@ class Message(models.Model):
     AWAITS = 'awaits'
     CANCELLED = 'cancelled'
 
-    MESSAGE_STATUSES = (
+    MESSAGE_STATUSES = [
         (SENT, 'sent'),
         (AWAITS, 'awaits'),
         (CANCELLED, 'cancelled'),
-    )
+    ]
 
     time_sent = models.DateTimeField(null=True, verbose_name='Sent time')
     msg_status = models.CharField(choices=MESSAGE_STATUSES, max_length=12, default=AWAITS, verbose_name='Message status')
