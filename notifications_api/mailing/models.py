@@ -1,6 +1,5 @@
 from django.db import models
 from django.conf import settings
-from django.utils import timezone
 
 
 import pytz
@@ -57,7 +56,7 @@ class Message(models.Model):
     )
 
     time_sent = models.DateTimeField(null=True, verbose_name='Sent time')
-    msg_status = models.CharField(choices=MESSAGE_STATUSES, default=AWAITS, verbose_name='Message status')
+    msg_status = models.CharField(choices=MESSAGE_STATUSES, max_length=12, default=AWAITS, verbose_name='Message status')
     client = models.ForeignKey(Client, on_delete=models.CASCADE, verbose_name='Client')
     mailing = models.ForeignKey(Mailing, on_delete=models.CASCADE, verbose_name='Mailing')
 

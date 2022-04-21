@@ -8,7 +8,7 @@ class MailingAdmin(admin.ModelAdmin):
 
 class MessageAdmin(admin.ModelAdmin):
     list_display = ('id', 'msg_status', 'mailing', 'client')
-    list_filter = ['status']
+    list_filter = ['msg_status']
 
 class ClientAdmin(admin.ModelAdmin) :
     list_display = ('id', 'phone_number', 'operator_code', 'timezone')
