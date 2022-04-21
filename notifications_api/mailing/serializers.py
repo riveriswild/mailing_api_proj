@@ -21,7 +21,9 @@ class MessageSerializer(serializers.ModelSerializer):
 
 
 class StatisticsMailingSerializer(serializers.ModelSerializer):
-    model = Mailing
-    fields = ('id', 'dispatched', 'all_messages', 'sent_messages')
+    class Meta:
+        model = Mailing
+        fields = ('id', 'dispatched', 'all_messages', 'sent_messages')
+
 
 

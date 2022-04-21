@@ -22,15 +22,14 @@ class MailingViewSet(viewsets.ModelViewSet):
     queryset = Mailing.objects.all()
 
 
-class MailingStatsView:
+class MailingStatsView(viewsets.ReadOnlyModelViewSet):
     queryset = Mailing.objects.all()
     serializer_class = StatisticsMailingSerializer
 
-    @action(detail=True, methods=['get'])
     def get_stat(self, request, pk=None):
         queryset_mailing = Mailing.objects.all()
         get_object_or_404(queryset_mailing, pk=pk)
-        queryset = Message.objects.filter(mailing_id=pk).all()
+        queryset = Message.objects.filter(mailing=pk).all()
         serializer = MessageSerializer(queryset, many=True)
         return Response(serializer.data)
 
