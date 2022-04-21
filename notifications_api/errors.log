@@ -1,0 +1,260 @@
+2022-04-21 20:20:41,736 ERROR Internal Server Error: /docs/ /home/river/PycharmProjects/notifications/venv/lib/python3.8/site-packages/django/utils/log.py (<class 'AssertionError'>, AssertionError('Using OpenAPIRenderer, but `pyyaml` is not installed.'), <traceback object at 0x7fa9bcf12940>)
+Traceback (most recent call last):
+  File "/home/river/PycharmProjects/notifications/venv/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/river/PycharmProjects/notifications/venv/lib/python3.8/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/river/PycharmProjects/notifications/venv/lib/python3.8/site-packages/django/views/decorators/csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/home/river/PycharmProjects/notifications/venv/lib/python3.8/site-packages/django/views/generic/base.py", line 84, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/river/PycharmProjects/notifications/venv/lib/python3.8/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/home/river/PycharmProjects/notifications/venv/lib/python3.8/site-packages/rest_framework/schemas/views.py", line 48, in handle_exception
+    return super().handle_exception(exc)
+  File "/home/river/PycharmProjects/notifications/venv/lib/python3.8/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/home/river/PycharmProjects/notifications/venv/lib/python3.8/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/home/river/PycharmProjects/notifications/venv/lib/python3.8/site-packages/rest_framework/views.py", line 497, in dispatch
+    self.initial(request, *args, **kwargs)
+  File "/home/river/PycharmProjects/notifications/venv/lib/python3.8/site-packages/rest_framework/views.py", line 406, in initial
+    neg = self.perform_content_negotiation(request)
+  File "/home/river/PycharmProjects/notifications/venv/lib/python3.8/site-packages/rest_framework/views.py", line 306, in perform_content_negotiation
+    renderers = self.get_renderers()
+  File "/home/river/PycharmProjects/notifications/venv/lib/python3.8/site-packages/rest_framework/views.py", line 260, in get_renderers
+    return [renderer() for renderer in self.renderer_classes]
+  File "/home/river/PycharmProjects/notifications/venv/lib/python3.8/site-packages/rest_framework/views.py", line 260, in <listcomp>
+    return [renderer() for renderer in self.renderer_classes]
+  File "/home/river/PycharmProjects/notifications/venv/lib/python3.8/site-packages/rest_framework/renderers.py", line 1056, in __init__
+    assert yaml, 'Using OpenAPIRenderer, but `pyyaml` is not installed.'
+AssertionError: Using OpenAPIRenderer, but `pyyaml` is not installed.
+2022-04-21 20:20:41,739 ERROR "GET /docs/ HTTP/1.1" 500 119681 /home/river/PycharmProjects/notifications/venv/lib/python3.8/site-packages/django/core/servers/basehttp.py None
+2022-04-21 20:44:03,454 ERROR Internal Server Error: /mailing/admin/login/ /home/river/PycharmProjects/notifications/venv/lib/python3.8/site-packages/django/utils/log.py (<class 'django.contrib.sites.models.Site.DoesNotExist'>, DoesNotExist('Site matching query does not exist.'), <traceback object at 0x7f10980fe180>)
+Traceback (most recent call last):
+  File "/home/river/PycharmProjects/notifications/venv/lib/python3.8/site-packages/django/contrib/sites/models.py", line 39, in _get_site_by_request
+    SITE_CACHE[host] = self.get(domain__iexact=host)
+  File "/home/river/PycharmProjects/notifications/venv/lib/python3.8/site-packages/django/db/models/manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/home/river/PycharmProjects/notifications/venv/lib/python3.8/site-packages/django/db/models/query.py", line 496, in get
+    raise self.model.DoesNotExist(
+django.contrib.sites.models.Site.DoesNotExist: Site matching query does not exist.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/river/PycharmProjects/notifications/venv/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/river/PycharmProjects/notifications/venv/lib/python3.8/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/river/PycharmProjects/notifications/venv/lib/python3.8/site-packages/django/utils/decorators.py", line 46, in _wrapper
+    return bound_method(*args, **kwargs)
+  File "/home/river/PycharmProjects/notifications/venv/lib/python3.8/site-packages/django/views/decorators/cache.py", line 62, in _wrapped_view_func
+    response = view_func(request, *args, **kwargs)
+  File "/home/river/PycharmProjects/notifications/venv/lib/python3.8/site-packages/django/contrib/admin/sites.py", line 440, in login
+    return LoginView.as_view(**defaults)(request)
+  File "/home/river/PycharmProjects/notifications/venv/lib/python3.8/site-packages/django/views/generic/base.py", line 84, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/river/PycharmProjects/notifications/venv/lib/python3.8/site-packages/django/utils/decorators.py", line 46, in _wrapper
+    return bound_method(*args, **kwargs)
+  File "/home/river/PycharmProjects/notifications/venv/lib/python3.8/site-packages/django/views/decorators/debug.py", line 92, in sensitive_post_parameters_wrapper
+    return view(request, *args, **kwargs)
+  File "/home/river/PycharmProjects/notifications/venv/lib/python3.8/site-packages/django/utils/decorators.py", line 46, in _wrapper
+    return bound_method(*args, **kwargs)
+  File "/home/river/PycharmProjects/notifications/venv/lib/python3.8/site-packages/django/utils/decorators.py", line 133, in _wrapped_view
+    response = view_func(request, *args, **kwargs)
+  File "/home/river/PycharmProjects/notifications/venv/lib/python3.8/site-packages/django/utils/decorators.py", line 46, in _wrapper
+    return bound_method(*args, **kwargs)
+  File "/home/river/PycharmProjects/notifications/venv/lib/python3.8/site-packages/django/views/decorators/cache.py", line 62, in _wrapped_view_func
+    response = view_func(request, *args, **kwargs)
+  File "/home/river/PycharmProjects/notifications/venv/lib/python3.8/site-packages/django/contrib/auth/views.py", line 67, in dispatch
+    return super().dispatch(request, *args, **kwargs)
+  File "/home/river/PycharmProjects/notifications/venv/lib/python3.8/site-packages/django/views/generic/base.py", line 119, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/home/river/PycharmProjects/notifications/venv/lib/python3.8/site-packages/django/views/generic/edit.py", line 144, in get
+    return self.render_to_response(self.get_context_data())
+  File "/home/river/PycharmProjects/notifications/venv/lib/python3.8/site-packages/django/contrib/auth/views.py", line 103, in get_context_data
+    current_site = get_current_site(self.request)
+  File "/home/river/PycharmProjects/notifications/venv/lib/python3.8/site-packages/django/contrib/sites/shortcuts.py", line 14, in get_current_site
+    return Site.objects.get_current(request)
+  File "/home/river/PycharmProjects/notifications/venv/lib/python3.8/site-packages/django/contrib/sites/models.py", line 61, in get_current
+    return self._get_site_by_request(request)
+  File "/home/river/PycharmProjects/notifications/venv/lib/python3.8/site-packages/django/contrib/sites/models.py", line 45, in _get_site_by_request
+    SITE_CACHE[domain] = self.get(domain__iexact=domain)
+  File "/home/river/PycharmProjects/notifications/venv/lib/python3.8/site-packages/django/db/models/manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/home/river/PycharmProjects/notifications/venv/lib/python3.8/site-packages/django/db/models/query.py", line 496, in get
+    raise self.model.DoesNotExist(
+django.contrib.sites.models.Site.DoesNotExist: Site matching query does not exist.
+2022-04-21 20:44:03,456 ERROR "GET /mailing/admin/login/?next=/admin/ HTTP/1.1" 500 173846 /home/river/PycharmProjects/notifications/venv/lib/python3.8/site-packages/django/core/servers/basehttp.py None
+2022-04-21 20:44:44,235 ERROR Internal Server Error: /admin/login/ /home/river/PycharmProjects/notifications/venv/lib/python3.8/site-packages/django/utils/log.py (<class 'django.contrib.sites.models.Site.DoesNotExist'>, DoesNotExist('Site matching query does not exist.'), <traceback object at 0x7f91829aff80>)
+Traceback (most recent call last):
+  File "/home/river/PycharmProjects/notifications/venv/lib/python3.8/site-packages/django/contrib/sites/models.py", line 39, in _get_site_by_request
+    SITE_CACHE[host] = self.get(domain__iexact=host)
+  File "/home/river/PycharmProjects/notifications/venv/lib/python3.8/site-packages/django/db/models/manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/home/river/PycharmProjects/notifications/venv/lib/python3.8/site-packages/django/db/models/query.py", line 496, in get
+    raise self.model.DoesNotExist(
+django.contrib.sites.models.Site.DoesNotExist: Site matching query does not exist.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/river/PycharmProjects/notifications/venv/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/river/PycharmProjects/notifications/venv/lib/python3.8/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/river/PycharmProjects/notifications/venv/lib/python3.8/site-packages/django/utils/decorators.py", line 46, in _wrapper
+    return bound_method(*args, **kwargs)
+  File "/home/river/PycharmProjects/notifications/venv/lib/python3.8/site-packages/django/views/decorators/cache.py", line 62, in _wrapped_view_func
+    response = view_func(request, *args, **kwargs)
+  File "/home/river/PycharmProjects/notifications/venv/lib/python3.8/site-packages/django/contrib/admin/sites.py", line 440, in login
+    return LoginView.as_view(**defaults)(request)
+  File "/home/river/PycharmProjects/notifications/venv/lib/python3.8/site-packages/django/views/generic/base.py", line 84, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/river/PycharmProjects/notifications/venv/lib/python3.8/site-packages/django/utils/decorators.py", line 46, in _wrapper
+    return bound_method(*args, **kwargs)
+  File "/home/river/PycharmProjects/notifications/venv/lib/python3.8/site-packages/django/views/decorators/debug.py", line 92, in sensitive_post_parameters_wrapper
+    return view(request, *args, **kwargs)
+  File "/home/river/PycharmProjects/notifications/venv/lib/python3.8/site-packages/django/utils/decorators.py", line 46, in _wrapper
+    return bound_method(*args, **kwargs)
+  File "/home/river/PycharmProjects/notifications/venv/lib/python3.8/site-packages/django/utils/decorators.py", line 133, in _wrapped_view
+    response = view_func(request, *args, **kwargs)
+  File "/home/river/PycharmProjects/notifications/venv/lib/python3.8/site-packages/django/utils/decorators.py", line 46, in _wrapper
+    return bound_method(*args, **kwargs)
+  File "/home/river/PycharmProjects/notifications/venv/lib/python3.8/site-packages/django/views/decorators/cache.py", line 62, in _wrapped_view_func
+    response = view_func(request, *args, **kwargs)
+  File "/home/river/PycharmProjects/notifications/venv/lib/python3.8/site-packages/django/contrib/auth/views.py", line 67, in dispatch
+    return super().dispatch(request, *args, **kwargs)
+  File "/home/river/PycharmProjects/notifications/venv/lib/python3.8/site-packages/django/views/generic/base.py", line 119, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/home/river/PycharmProjects/notifications/venv/lib/python3.8/site-packages/django/views/generic/edit.py", line 144, in get
+    return self.render_to_response(self.get_context_data())
+  File "/home/river/PycharmProjects/notifications/venv/lib/python3.8/site-packages/django/contrib/auth/views.py", line 103, in get_context_data
+    current_site = get_current_site(self.request)
+  File "/home/river/PycharmProjects/notifications/venv/lib/python3.8/site-packages/django/contrib/sites/shortcuts.py", line 14, in get_current_site
+    return Site.objects.get_current(request)
+  File "/home/river/PycharmProjects/notifications/venv/lib/python3.8/site-packages/django/contrib/sites/models.py", line 61, in get_current
+    return self._get_site_by_request(request)
+  File "/home/river/PycharmProjects/notifications/venv/lib/python3.8/site-packages/django/contrib/sites/models.py", line 45, in _get_site_by_request
+    SITE_CACHE[domain] = self.get(domain__iexact=domain)
+  File "/home/river/PycharmProjects/notifications/venv/lib/python3.8/site-packages/django/db/models/manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/home/river/PycharmProjects/notifications/venv/lib/python3.8/site-packages/django/db/models/query.py", line 496, in get
+    raise self.model.DoesNotExist(
+django.contrib.sites.models.Site.DoesNotExist: Site matching query does not exist.
+2022-04-21 20:44:44,236 ERROR "GET /admin/login/?next=/admin/ HTTP/1.1" 500 173606 /home/river/PycharmProjects/notifications/venv/lib/python3.8/site-packages/django/core/servers/basehttp.py None
+2022-04-21 20:45:47,308 ERROR Internal Server Error: /admin/login/ /home/river/PycharmProjects/notifications/venv/lib/python3.8/site-packages/django/utils/log.py (<class 'django.contrib.sites.models.Site.DoesNotExist'>, DoesNotExist('Site matching query does not exist.'), <traceback object at 0x7fec7e1ce900>)
+Traceback (most recent call last):
+  File "/home/river/PycharmProjects/notifications/venv/lib/python3.8/site-packages/django/contrib/sites/models.py", line 39, in _get_site_by_request
+    SITE_CACHE[host] = self.get(domain__iexact=host)
+  File "/home/river/PycharmProjects/notifications/venv/lib/python3.8/site-packages/django/db/models/manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/home/river/PycharmProjects/notifications/venv/lib/python3.8/site-packages/django/db/models/query.py", line 496, in get
+    raise self.model.DoesNotExist(
+django.contrib.sites.models.Site.DoesNotExist: Site matching query does not exist.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/river/PycharmProjects/notifications/venv/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/river/PycharmProjects/notifications/venv/lib/python3.8/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/river/PycharmProjects/notifications/venv/lib/python3.8/site-packages/django/utils/decorators.py", line 46, in _wrapper
+    return bound_method(*args, **kwargs)
+  File "/home/river/PycharmProjects/notifications/venv/lib/python3.8/site-packages/django/views/decorators/cache.py", line 62, in _wrapped_view_func
+    response = view_func(request, *args, **kwargs)
+  File "/home/river/PycharmProjects/notifications/venv/lib/python3.8/site-packages/django/contrib/admin/sites.py", line 440, in login
+    return LoginView.as_view(**defaults)(request)
+  File "/home/river/PycharmProjects/notifications/venv/lib/python3.8/site-packages/django/views/generic/base.py", line 84, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/river/PycharmProjects/notifications/venv/lib/python3.8/site-packages/django/utils/decorators.py", line 46, in _wrapper
+    return bound_method(*args, **kwargs)
+  File "/home/river/PycharmProjects/notifications/venv/lib/python3.8/site-packages/django/views/decorators/debug.py", line 92, in sensitive_post_parameters_wrapper
+    return view(request, *args, **kwargs)
+  File "/home/river/PycharmProjects/notifications/venv/lib/python3.8/site-packages/django/utils/decorators.py", line 46, in _wrapper
+    return bound_method(*args, **kwargs)
+  File "/home/river/PycharmProjects/notifications/venv/lib/python3.8/site-packages/django/utils/decorators.py", line 133, in _wrapped_view
+    response = view_func(request, *args, **kwargs)
+  File "/home/river/PycharmProjects/notifications/venv/lib/python3.8/site-packages/django/utils/decorators.py", line 46, in _wrapper
+    return bound_method(*args, **kwargs)
+  File "/home/river/PycharmProjects/notifications/venv/lib/python3.8/site-packages/django/views/decorators/cache.py", line 62, in _wrapped_view_func
+    response = view_func(request, *args, **kwargs)
+  File "/home/river/PycharmProjects/notifications/venv/lib/python3.8/site-packages/django/contrib/auth/views.py", line 67, in dispatch
+    return super().dispatch(request, *args, **kwargs)
+  File "/home/river/PycharmProjects/notifications/venv/lib/python3.8/site-packages/django/views/generic/base.py", line 119, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/home/river/PycharmProjects/notifications/venv/lib/python3.8/site-packages/django/views/generic/edit.py", line 144, in get
+    return self.render_to_response(self.get_context_data())
+  File "/home/river/PycharmProjects/notifications/venv/lib/python3.8/site-packages/django/contrib/auth/views.py", line 103, in get_context_data
+    current_site = get_current_site(self.request)
+  File "/home/river/PycharmProjects/notifications/venv/lib/python3.8/site-packages/django/contrib/sites/shortcuts.py", line 14, in get_current_site
+    return Site.objects.get_current(request)
+  File "/home/river/PycharmProjects/notifications/venv/lib/python3.8/site-packages/django/contrib/sites/models.py", line 61, in get_current
+    return self._get_site_by_request(request)
+  File "/home/river/PycharmProjects/notifications/venv/lib/python3.8/site-packages/django/contrib/sites/models.py", line 45, in _get_site_by_request
+    SITE_CACHE[domain] = self.get(domain__iexact=domain)
+  File "/home/river/PycharmProjects/notifications/venv/lib/python3.8/site-packages/django/db/models/manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/home/river/PycharmProjects/notifications/venv/lib/python3.8/site-packages/django/db/models/query.py", line 496, in get
+    raise self.model.DoesNotExist(
+django.contrib.sites.models.Site.DoesNotExist: Site matching query does not exist.
+2022-04-21 20:45:47,312 ERROR "GET /admin/login/?next=/admin/ HTTP/1.1" 500 173606 /home/river/PycharmProjects/notifications/venv/lib/python3.8/site-packages/django/core/servers/basehttp.py None
+2022-04-21 20:45:54,939 ERROR Internal Server Error: /admin/login/ /home/river/PycharmProjects/notifications/venv/lib/python3.8/site-packages/django/utils/log.py (<class 'django.contrib.sites.models.Site.DoesNotExist'>, DoesNotExist('Site matching query does not exist.'), <traceback object at 0x7fec7e1611c0>)
+Traceback (most recent call last):
+  File "/home/river/PycharmProjects/notifications/venv/lib/python3.8/site-packages/django/contrib/sites/models.py", line 39, in _get_site_by_request
+    SITE_CACHE[host] = self.get(domain__iexact=host)
+  File "/home/river/PycharmProjects/notifications/venv/lib/python3.8/site-packages/django/db/models/manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/home/river/PycharmProjects/notifications/venv/lib/python3.8/site-packages/django/db/models/query.py", line 496, in get
+    raise self.model.DoesNotExist(
+django.contrib.sites.models.Site.DoesNotExist: Site matching query does not exist.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/river/PycharmProjects/notifications/venv/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/river/PycharmProjects/notifications/venv/lib/python3.8/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/river/PycharmProjects/notifications/venv/lib/python3.8/site-packages/django/utils/decorators.py", line 46, in _wrapper
+    return bound_method(*args, **kwargs)
+  File "/home/river/PycharmProjects/notifications/venv/lib/python3.8/site-packages/django/views/decorators/cache.py", line 62, in _wrapped_view_func
+    response = view_func(request, *args, **kwargs)
+  File "/home/river/PycharmProjects/notifications/venv/lib/python3.8/site-packages/django/contrib/admin/sites.py", line 440, in login
+    return LoginView.as_view(**defaults)(request)
+  File "/home/river/PycharmProjects/notifications/venv/lib/python3.8/site-packages/django/views/generic/base.py", line 84, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/river/PycharmProjects/notifications/venv/lib/python3.8/site-packages/django/utils/decorators.py", line 46, in _wrapper
+    return bound_method(*args, **kwargs)
+  File "/home/river/PycharmProjects/notifications/venv/lib/python3.8/site-packages/django/views/decorators/debug.py", line 92, in sensitive_post_parameters_wrapper
+    return view(request, *args, **kwargs)
+  File "/home/river/PycharmProjects/notifications/venv/lib/python3.8/site-packages/django/utils/decorators.py", line 46, in _wrapper
+    return bound_method(*args, **kwargs)
+  File "/home/river/PycharmProjects/notifications/venv/lib/python3.8/site-packages/django/utils/decorators.py", line 133, in _wrapped_view
+    response = view_func(request, *args, **kwargs)
+  File "/home/river/PycharmProjects/notifications/venv/lib/python3.8/site-packages/django/utils/decorators.py", line 46, in _wrapper
+    return bound_method(*args, **kwargs)
+  File "/home/river/PycharmProjects/notifications/venv/lib/python3.8/site-packages/django/views/decorators/cache.py", line 62, in _wrapped_view_func
+    response = view_func(request, *args, **kwargs)
+  File "/home/river/PycharmProjects/notifications/venv/lib/python3.8/site-packages/django/contrib/auth/views.py", line 67, in dispatch
+    return super().dispatch(request, *args, **kwargs)
+  File "/home/river/PycharmProjects/notifications/venv/lib/python3.8/site-packages/django/views/generic/base.py", line 119, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/home/river/PycharmProjects/notifications/venv/lib/python3.8/site-packages/django/views/generic/edit.py", line 144, in get
+    return self.render_to_response(self.get_context_data())
+  File "/home/river/PycharmProjects/notifications/venv/lib/python3.8/site-packages/django/contrib/auth/views.py", line 103, in get_context_data
+    current_site = get_current_site(self.request)
+  File "/home/river/PycharmProjects/notifications/venv/lib/python3.8/site-packages/django/contrib/sites/shortcuts.py", line 14, in get_current_site
+    return Site.objects.get_current(request)
+  File "/home/river/PycharmProjects/notifications/venv/lib/python3.8/site-packages/django/contrib/sites/models.py", line 61, in get_current
+    return self._get_site_by_request(request)
+  File "/home/river/PycharmProjects/notifications/venv/lib/python3.8/site-packages/django/contrib/sites/models.py", line 45, in _get_site_by_request
+    SITE_CACHE[domain] = self.get(domain__iexact=domain)
+  File "/home/river/PycharmProjects/notifications/venv/lib/python3.8/site-packages/django/db/models/manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/home/river/PycharmProjects/notifications/venv/lib/python3.8/site-packages/django/db/models/query.py", line 496, in get
+    raise self.model.DoesNotExist(
+django.contrib.sites.models.Site.DoesNotExist: Site matching query does not exist.
+2022-04-21 20:45:54,940 ERROR "GET /admin/login/?next=/admin/ HTTP/1.1" 500 173606 /home/river/PycharmProjects/notifications/venv/lib/python3.8/site-packages/django/core/servers/basehttp.py None
