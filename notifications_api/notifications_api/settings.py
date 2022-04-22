@@ -85,8 +85,11 @@ WSGI_APPLICATION = 'notifications_api.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+            'ENGINE': 'django.db.backends.postgresql',
+             'HOST': os.environ.get('DB_HOST'),
+            'NAME': os.environ.get('DB_NAME'),
+            'USER': os.environ.get('DB_USER'),
+            'PASSWORD': os.environ.get('DB_PASS'),
     }
 }
 
@@ -136,8 +139,8 @@ STATIC_URL = 'static/'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-CELERY_BROKER_URL = 'redis://localhost:6379'
-CELERY_RESULT_BACKEND = 'redis://localhost:6379'
+CELERY_BROKER_URL = 'redis://redis:6379'
+CELERY_RESULT_BACKEND = 'redis://redis:6379'
 CELERY_ACCEPT_CONTENT = ['application/json']
 CELERY_TASK_SERIALIZER = 'json'
 CELERY_RESULT_SERIALIZER = 'json'
@@ -148,97 +151,4 @@ CELERY_RESULT_SERIALIZER = 'json'
 # EMAIL_PORT = env('EMAIL_PORT')
 # EMAIL_USE_TLS = True
 
-
-LOGGING = {
-    'version': 1,
-    'disable_existing_loggers': False,
-
-    'filters': {
-        'require_debug_false': {
-            '()': 'django.utils.log.RequireDebugFalse',
-        },
-        'require_debug_true': {
-            '()': 'django.utils.log.RequireDebugTrue',
-        },
-    },
-    'formatters': {
-        'simple': {
-            'format': '%(asctime)s %(levelname)s %(message)s'  # время, уровень лог сообщения, сообщение
-        },
-        'path': {
-            'format': '%(asctime)s %(levelname)s %(message)s %(pathname)s'  # + путь к источнику
-        },
-        'st': {
-            'format': '%(asctime)s %(levelname)s %(message)s %(pathname)s %(exc_info)s'  # + стэк ошибки
-        },
-        'module': {
-            'format': '%(asctime)s %(levelname)s %(message)s %(module)s'           # время, уровень, модуль, сообщение
-        },
-    },
-    'handlers': {
-        'console': {
-            'class': 'logging.StreamHandler',
-            'level': 'DEBUG',
-            'filters':  ['require_debug_true'],
-            'formatter': 'simple',
-        },
-        'console_w': {
-            'class': 'logging.StreamHandler',
-            'level': 'WARNING',
-            'filters': ['require_debug_true'],
-            'formatter': 'path',
-        },
-        'console_e': {
-            'class': 'logging.StreamHandler',
-            'level': 'ERROR',
-            'filters': ['require_debug_true'],
-            'formatter': 'st',
-        },
-        'general': {
-            'class': 'logging.FileHandler',
-            'filename': 'general.log',
-            'level': 'INFO',
-            'filters': ['require_debug_false'],
-            'formatter': 'module',
-        },
-        'errors': {
-            'class': 'logging.FileHandler',
-            'filename': 'errors.log',
-            'level': 'ERROR',
-            'formatter': 'st',
-        },
-        'security': {
-            'class': 'logging.FileHandler',
-            'filename': 'security.log',
-            'formatter': 'module',
-        },
-        'mail': {
-            'class': 'django.utils.log.AdminEmailHandler',
-            'level': 'ERROR',
-            'filters': ['require_debug_false'],
-            'formatter': 'path',
-        },
-    },
-    'loggers': {
-        'django': {
-            'handlers': ['console', 'console_w', 'console_e', 'general'],
-        },
-        'django.request': {
-            'handlers': ['errors', 'mail'],
-        },
-        'django.server': {
-            'handlers': ['errors', 'mail'],
-        },
-        'django.template': {
-            'handlers': ['errors'],
-        },
-        'django.db_backends': {
-            'handlers': ['errors'],
-        },
-        'django.security': {
-            'handlers': ['security'],
-        },
-
-    }
-}
 
